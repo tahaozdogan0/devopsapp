@@ -1,0 +1,18 @@
+{
+  "name": "devopsapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "server": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "docker": "^0.2.14",
+    "express": "^4.18.2",
+    "mysql": "^2.18.1",
+    "mysql2": "^3.9.1"
+  }
+}

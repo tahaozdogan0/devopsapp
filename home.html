@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ana Sayfa</title>
+</head>
+<body>
+  <table>
+    <thead>
+      <tr>
+        <th>Kullanıcı adı</th>
+        <th>Şifre</th>
+      </tr>
+    </thead>
+    <tbody id="table-body">
+    </tbody>
+  </table>
+
+  <script>
+    // Sunucudan kayıtları alma
+    fetch("/home")
+      .then(response => response.json())
+      .then(data => {
+        // Kayıtları tabloya ekleme
+        const tbody = document.getElementById("table-body");
+        data.forEach(record => {
+          const tr = document.createElement("tr");
+          const td1 = document.createElement("td");
+          const td2 = document.createElement("td");
+
+          td1.textContent = record.username;
+          td2.textContent = record.password;
+
+          tr.appendChild(td1);
+          tr.appendChild(td2);
+
+          tbody.appendChild(tr);
+        });
+      })
+      .catch(error => {
+        // Hata durumunda hata mesajı gösterme
+        console.error("Kayıtlar alınamadı:", error);
+      });
+  </script>
+</body>
+</html>
