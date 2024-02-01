@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: devopsapp
+  namespace: default
+  labels:
+    app: devopsapp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: devopsapp
+  template:
+    metadata:
+      labels:
+        app: devopsapp
+    spec:
+      containers:
+      - name: devopsapp
+        image: tahaozdogan/devopsapp:v2
+        ports:
+        - containerPort: 5000
