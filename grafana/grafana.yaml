@@ -1,0 +1,28 @@
+grafana:
+  adminUser: admin
+  adminPassword: 644529Taha
+
+  ingress:
+    enabled: true
+    annotations:
+      kubernetes.io/ingress.class: "nginx"
+      nginx.ingress.kubernetes.io/rewrite-target: /$1
+      nginx.ingress.kubernetes.io/use-regex: "true"
+    path: /grafana/?(.*)
+    hosts:
+      - k8s.cluster.local
+
+  plugins:
+  - digrich-bubblechart-panel
+  - grafana-clock-panel
+  - grafana-piechart-panel
+
+  grafana.ini:
+    server:
+      root_url: http://localhost:3000/grafana 
+    smtp:
+       enabled: true
+       host: smtp.gmail.com:587
+       user: "tahaozdogan79@gmail.com"
+       password: "taha644529"
+       skip_verify: true
