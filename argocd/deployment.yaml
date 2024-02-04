@@ -19,4 +19,4 @@ spec:
       - name: devopsapp
         image: tahaozdogan/devopsapp:v2
         ports:
-        - containerPort: 5000
+        - containerPort: 3000
