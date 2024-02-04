@@ -32,7 +32,7 @@ const connection = mysql.createConnection({
   host: 'localhost',
   user: 'root',
   database: 'devopsapp',
-  password: '644529'
+  password: '644529taha'
 });
 
 
