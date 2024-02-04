@@ -29,7 +29,7 @@ app.listen(port, () => {
 });
 
 const connection = mysql.createConnection({
-  host: 'instance-1:3306',
+  host: 'localhost',
   user: 'root',
   database: 'devopsapp',
   password: '644529taha'
